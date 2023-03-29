@@ -35,3 +35,12 @@ body {
     color: blue;
     font-weight: 800;
 }
+
+.result {
+    display: flex;
+    justify-content: center;
+}
+
+.final-result {
+    text-align: center;
+}
