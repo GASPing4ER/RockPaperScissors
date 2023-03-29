@@ -5,4 +5,33 @@ body {
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.btn {
+    width: 150px;
+    height: 150px;
+    padding: 30px 30px;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.btn:hover {
+    border: 5px solid blue;
+    color: blue;
+    font-weight: 800;
 }

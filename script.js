@@ -1,6 +1,19 @@
 const options = ["rock", "paper", "scissors"]
 
+playerPoints = 0
+computerPoints = 0
+
+const btns = document.querySelectorAll(".btn")
+console.log(btns)
+
+btns.forEach((button) => {
+    button.addEventListener("click", () => {
+        playRound(button.id, getComputerChoice)
+    })
+})
+
 let getComputerChoice = () => options[Math.floor(Math.random()*options.length)]
+
 
 let playRound = (playerSelection, computerSelection) => {
     if (playerSelection == computerSelection) {
@@ -26,24 +39,20 @@ let playRound = (playerSelection, computerSelection) => {
     }
 }
 
-let game = () => {
-    playerPoints = 0
-    computerPoints = 0
-    while (playerPoints < 5 && computerPoints < 5) {
-        let playerSelection = prompt("Choose rock, paper, scissors!").toLowerCase()
-        let result = playRound(playerSelection, getComputerChoice())
-        if (result == "Computer wins!") {
-            computerPoints++
-        } else if (result == "Player wins!") {
-            playerPoints++
-        }
-        alert(result + " Player Points: " + playerPoints + " Computer Points: " + computerPoints)
-        console.log(result + " Player Points: " + playerPoints + " Computer Points: " + computerPoints)
+
+while (playerPoints < 5 && computerPoints < 5) {
+    let result = playRound(playerSelection, getComputerChoice())
+    if (result == "Computer wins!") {
+        computerPoints++
+    } else if (result == "Player wins!") {
+        playerPoints++
     }
-    if (playerPoints == 5) {
-        console.log()
-        alert("CONGRATULATIONS PLAYER! YOU WON AGAINST THE COMPUTER!")
-    } else {
-        alert("YOU SUCK! DO BETTER")
-    }
+    alert(result + " Player Points: " + playerPoints + " Computer Points: " + computerPoints)
+    console.log(result + " Player Points: " + playerPoints + " Computer Points: " + computerPoints)
+}
+if (playerPoints == 5) {
+    console.log()
+    alert("CONGRATULATIONS PLAYER! YOU WON AGAINST THE COMPUTER!")
+} else {
+    alert("YOU SUCK! DO BETTER")
 }
